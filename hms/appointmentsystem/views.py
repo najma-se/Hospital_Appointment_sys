@@ -6,6 +6,8 @@ from django.contrib.auth.decorators import login_required, user_passes_test
 from .forms import PatientSignupForm, LoginForm , DoctorForm, AppointmentForm, AdminRegistrationForm, OnlineAppointmentForm
 from django.contrib import messages
 from .models import Doctor, Appointment, OnlineAppointmentRequest
+from django.db.models import Q
+
  
 
 
@@ -125,11 +127,18 @@ def load_doctors(request):
 @admin_required
 def appointment_list(request):
     appointments = Appointment.objects.all().order_by('-appointment_date')
+    query = request.GET.get('q')
+    appointments = Appointment.objects.all()
+    if query:
+        appointments = appointments.filter(
+            Q(full_name__icontains=query) |
+            Q(email__icontains=query)
+        )
+
     context = {
         'appointments': appointments
     }
     return render(request, 'admin/appointment_list.html', context)
-
 @login_required
 @admin_required
 def cancel_appointment(request, pk):
