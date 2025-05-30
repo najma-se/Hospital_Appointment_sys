@@ -1,0 +1,15 @@
+{% extends "user/user_base.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+  <h2>Update Appointment</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form | crispy }}
+
+    <button type="submit" class="btn text-white" style="background-color: #175f65;">Update</button>
+    <a href="{% url 'my_appointments' %}" class="btn text-white" style="background-color: #175f65;">Go back</a>
+
+  </form>
+{% endblock %}

@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% load static %} 
+{% block content %} 
+
+<style>
+    .hero-about {
+        background-color: #006d77;
+        color: white;
+        padding: 40px 0;
+        text-align: center;
+    }
+    .section-title {
+        color: #006d77;
+        margin-bottom: 30px;
+        font-weight: bold;
+    }
+    .about-card {
+        background: #f8f9fa;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+</style>
+</head>
+
+<!-- Hero Section -->
+<section class="hero-about">
+<div class="container">
+    <h1>About SerenityCare General Hospital</h1>
+    <p class="lead">Where compassion meets innovation in healthcare.</p>
+</div>
+</section>
+
+<div class="container my-5">
+<h2 class="section-title text-center">Welcome to SerenityCare</h2>
+<div class="row justify-content-center">
+    <div class="col-md-10 about-card">
+        <p>
+            SerenityCare General Hospital is a premier healthcare institution committed to delivering patient-centered, technology-driven medical care. Established in 2010, SerenityCare has grown into a trusted name in the community, known for its compassionate staff, cutting-edge treatments, and commitment to continuous innovation.
+        </p>
+        <p>
+            Our mission is to make quality healthcare accessible, efficient, and empathetic. We believe that healing is not just about treating illness — it's about nurturing the human spirit. Whether you visit for a routine checkup or a complex procedure, SerenityCare is here to guide you every step of the way.
+        </p>
+    </div>
+</div>
+
+<h2 class="section-title text-center mt-5">Our Core Departments</h2>
+<div class="row g-4 text-center">
+    <div class="col-md-4">
+        <div class="about-card">
+            <h5>General Medicine</h5>
+            <p>Primary care physicians focusing on prevention, diagnosis, and treatment of adult diseases.</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="about-card">
+            <h5>Pediatrics</h5>
+            <p>Compassionate care for infants, children, and adolescents with family-focused support.</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="about-card">
+            <h5>Cardiology</h5>
+            <p>Advanced heart care including diagnostics, monitoring, and non-invasive procedures.</p>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="about-card">
+            <h5>Emergency & Trauma</h5>
+            <p>24/7 emergency services with fast-response teams for critical and life-threatening conditions.</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="about-card">
+            <h5>Obstetrics & Gynecology</h5>
+            <p>Comprehensive women’s health services including prenatal, maternity, and reproductive care.</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="about-card">
+            <h5>Radiology & Imaging</h5>
+            <p>State-of-the-art imaging diagnostics including X-ray, MRI, CT Scan, and ultrasound services.</p>
+        </div>
+    </div>
+</div>
+
+<h2 class="section-title text-center mt-5">Our Technology</h2>
+<div class="row justify-content-center">
+    <div class="col-md-10 about-card">
+        <p>
+            SerenityCare leverages modern digital infrastructure like electronic health records (EHR), real-time appointment systems, and secure patient portals to ensure seamless interaction between patients and healthcare providers. With our HMS platform, patients can register online, view medical history, book appointments, and get timely reminders — all from the comfort of their home.
+        </p>
+        <p>
+            Our technology ensures accuracy, enhances safety, and minimizes administrative delays — allowing doctors and nurses to focus on what matters most: caring for you.
+        </p>
+    </div>
+</div>
+
+<h2 class="section-title text-center mt-5">Why Choose SerenityCare?</h2>
+<div class="row justify-content-center">
+    <div class="col-md-10 about-card">
+        <ul>
+            <li>Highly trained medical professionals and specialists</li>
+            <li>Modern infrastructure and digital medical records</li>
+            <li>Personalized care plans and wellness programs</li>
+            <li>Transparent billing and insurance-friendly services</li>
+            <li>Community outreach and health awareness programs</li>
+        </ul>
+    </div>
+</div>
+</div>
+
+
+{% endblock %}
+    

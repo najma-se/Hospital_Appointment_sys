@@ -1,0 +1,43 @@
+{% extends "user/user_base.html" %}
+{% block content %}
+<h2 class="mb-4">My Appointments</h2>
+<a href="{% url 'book_online_app' %}" class="btn text-white mb-4" style="background-color: #175f65;">Book New Appointment</a>
+
+<div class="row">
+  {% for appt in appointments %}
+    <div class="col-md-6 col-lg-4 mb-4">
+      <div class="card shadow-sm border-left-{{ appt.status|lower }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ appt.doctor.full_name }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{ appt.department.name }}</h6>
+          <p class="card-text">
+            <strong>Date:</strong> {{ appt.date }}<br>
+            <strong>Time:</strong> {{ appt.time }}<br>
+            <strong>Status:</strong> 
+            <span class="badge 
+              {% if appt.status == 'pending' %} bg-warning 
+              {% elif appt.status == 'accepted' %} bg-success 
+              {% elif appt.status == 'rejected' %} bg-danger 
+              {% elif appt.status == 'cancelled' %} bg-secondary 
+              {% endif %}">
+              {{ appt.status }}
+            </span>
+          </p>
+
+          {% if appt.status == 'pending' %}
+            <a href="{% url 'update_my_appointment' appt.id %}" class="btn btn-sm btn-primary">Update</a>
+            <a href="{% url 'delete_appointment' appt.id %}" class="btn btn-sm btn-danger">Cancel</a>
+          {% elif appt.status in 'rejected cancelled' %}
+            <a href="{% url 'delete_appointment' appt.id %}" class="btn btn-sm btn-danger">Delete</a>
+          {% else %}
+            <span class="text-muted">No actions available</span>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% empty %}
+    <div class="alert alert-info">You have no appointments yet.</div>
+  {% endfor %}
+</div>
+<a href="{% url 'user_dashboard' %}" class="btn text-white" style="background-color: #175f65;">Go back</a>
+{% endblock %}

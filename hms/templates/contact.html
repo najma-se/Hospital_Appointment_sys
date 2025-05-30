@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %} 
+    <style>
+        .contact-header {
+            background: url("{% static 'home/images/background1.jpg' %}") no-repeat center center;
+            background-size: cover;
+            color: #013b40;
+            padding: 100px 0;
+            text-align: center;
+        }
+        .contact-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        .section-title {
+            color: #013b40;
+            font-weight: bold;
+        }
+    </style>
+
+
+    <!-- Hero Section -->
+    <section class="contact-header">
+        <div class="container">
+            <h1 class="display-5 fw-bold">Get in Touch</h1>
+            <p class="lead">We're here to help — reach out any time.</p>
+        </div>
+    </section>
+
+    <!-- Contact Form & Info -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-5">
+                <!-- Contact Form -->
+                <div class="col-md-7">
+                    <div class="contact-card">
+                        <h3 class="section-title">Send a Message</h3>
+                        <form method="post">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Your Name</label>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Your Full Name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com">
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Your Message</label>
+                                <textarea class="form-control" id="message" name="message" rows="4" placeholder="How can we help?"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="background-color: #175f65;">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="col-md-5">
+                    <div class="contact-card">
+                        <h3 class="section-title">Contact Details</h3>
+                        <p><strong>Address:</strong> 15 Wellness Avenue, New Haven, NH 10021</p>
+                        <p><strong>Phone:</strong> (800) 123-4567</p>
+                        <p><strong>Email:</strong> info@serenitycare.org</p>
+                        <p><strong>Emergency:</strong> Available 24/7 for urgent cases</p>
+                        <hr>
+                        <h5>Opening Hours</h5>
+                        <p>Sun - Wed: 8:00 - 20:00</p>
+                        <p>Thu - Fri: 9:00 - 21:00</p>
+                        <p>Sat - Sun: 10:00 - 17:00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+{% endblock %}
+

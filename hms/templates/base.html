@@ -1,0 +1,90 @@
+{% load static %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HMS - Hospital Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/home/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg sticky-top" style="background-color: #006d77;">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-white" href="{% url 'home' %}">SerenityCare General Hospital</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon bg-light"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a href="{% url 'home' %}" class="nav-link text-white">Home</a></li>
+                    <li class="nav-item"><a href="{% url 'about' %}" class="nav-link text-white">About</a></li>
+                    <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link text-white">Contact</a></li>
+                    <li class="nav-item"><a href="{% url 'signup' %}" class="nav-link text-white">Signup</a></li>
+                    <li class="nav-item"><a href="{% url 'login' %}" class="nav-link text-white">Login</a></li>
+                </ul>
+            </div>
+       </div>
+    </nav>
+    {% block content %} 
+    
+    {% endblock %}
+    <!-- Footer -->
+    <footer style="background-color: #e6f2f1;" class="pt-5 pb-4">
+        <div class="container">
+            <div class="row text-center text-md-start align-items-start">
+                <!-- Logo + Tagline -->
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold text-teal mb-3">SerenityCare General Hospital</h5>
+                    <p class="text-muted">Where Compassion Meets Innovation.</p>
+                    <p>Follow us on</p>
+                    <div class="d-flex justify-content-center justify-content-md-start">
+                        <a href="#" class="text-primary ma-3 fs-4" title="Facebook">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="#" class="text-primary me-3 fs-4" title="Twitter">
+                            <i class="bi bi-twitter-x"></i>
+                        </a>
+                        <a href="#" class="text-danger me-3 fs-4" title="Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="#" class="text-primary fs-4" title="LinkedIn">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold text-teal mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="{% url 'home' %}" class="text-decoration-none text-muted">Home</a></li>
+                        <li class="mb-2"><a href="{% url 'about' %}" class="text-decoration-none text-muted">About</a></li>
+                        <li class="mb-2"><a href="{% url 'contact' %}" class="text-decoration-none text-muted">Contact</a></li>
+                        <li><a href="{% url 'login' %}" class="text-decoration-none text-muted">Login</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold text-teal mb-3">Get In Touch</h5>
+                    <p class="mb-1 text-muted"><i class="bi bi-envelope me-2"></i>info@gmail.com</p>
+                    <p class="mb-1 text-muted"><i class="bi bi-telephone me-2"></i>214-748-3647</p>
+                    <p class="text-muted"><i class="bi bi-clock me-2"></i>Support Available 24/7</p>
+                </div>
+            </div>
+
+            <!-- Bottom Strip -->
+            <hr class="text-muted">
+            <div class="text-center small text-muted">
+                &copy; 2025 SerenityCare General Hospital. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %} 
+{% load widget_tweaks %}
+{% block content %} 
+    <style>
+        body {
+            background-color: #ffffff; 
+        }
+        .card {
+            border: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .btn-teal {
+            background-color: #14b8a6;
+            color: white;
+        }
+        .btn-teal:hover {
+            background-color: #0f766e;
+        }
+    </style>
+
+
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="card p-4" style="width: 100%; max-width: 450px;">
+            <h3 class="text-center mb-4 text-teal">Sign Up</h3>
+
+            <form method="POST" novalidate>
+                {% csrf_token %}
+                {% if form.non_field_errors %}
+                    <div class="alert alert-danger">
+                        {{ form.non_field_errors }}
+                    </div>
+                {% endif %}
+
+                <div class="mb-3">
+                    <label class="form-label">{{ form.full_name.label }}</label>
+                    {{ form.full_name|add_class:"form-control" }}
+                    {{ form.full_name.errors }}
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">{{ form.email.label }}</label>
+                    {{ form.email|add_class:"form-control" }}
+                    {{ form.email.errors }}
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">{{ form.password1.label }}</label>
+                    {{ form.password1|add_class:"form-control" }}
+                    {{ form.password1.errors }}
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">{{ form.password2.label }}</label>
+                    {{ form.password2|add_class:"form-control" }}
+                    {{ form.password2.errors }}
+                </div>
+
+                <button type="submit" class="btn btn-teal w-100" style="background-color: #175f65;">Sign Up</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'admin/admin_base.html' %}
+{% block content %}
+
+<div class="container mt-4">
+  <h2>Appointment Requests Dashboard</h2>
+
+  <table class="table table-striped table-bordered">
+    <thead class="table-dark">
+      <tr>
+        <th>#</th>
+        <th>Patient</th>
+        <th>Department</th>
+        <th>Doctor</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for req in requests %}
+      <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ req.full_name }}</td>
+        <td>{{ req.department }}</td>
+        <td>{{ req.doctor }}</td>
+        <td>{{ req.date }}</td>
+        <td>{{ req.time }}</td>
+        <td>{{ req.status }}</td>
+        <td>
+          {% if req.status == 'pending' %}
+            <form method="post" action="{% url 'approve_appointment_request' req.id %}" style="display:inline;">
+              {% csrf_token %}
+              <button type="submit">Approve</button>
+            </form>
+            <form method="post" action="{% url 'reject_appointment_request' req.id %}" style="display:inline;">
+              {% csrf_token %}
+              <button type="submit">Reject</button>
+            </form>
+          {% else %}
+            {{ req.status|title }}
+          {% endif %}
+        </td>
+      </tr>
+      {% empty %}
+            <tr>
+                <td colspan="11" class="text-center">No appointments found.</td>
+            </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <a href="{% url 'admin_dashboard' %}" class="btn text-white" style="background-color: #175f65;">Go back</a>
+</div>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'admin/admin_base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+<div class="container">
+    <div class="row justify-content-center">
+        <label class="form-label text-center fw-bold display-6" for="">Register Doctor</label>
+
+        <div class="col-6">
+            <form method="post" class="form-group" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form | crispy }}
+
+                <div class="d-grid">
+                    <input type="submit" value="Save" class="btn text-white" style="background-color: #175f65;">
+                    <a href="{% url 'admin_dashboard' %}" class="btn text-white form-control" style="background-color: #175f65;">Go back</a>
+                </div>
+
+                
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+    
+{% endblock %}

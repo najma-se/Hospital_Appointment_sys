@@ -1,0 +1,41 @@
+<!-- admin_dashboard.html -->
+{% extends 'admin/admin_base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Welcome Section -->
+<div class="container text-center mt-5 fw-bold">
+  <h1>Welcome to Admin Dashboard</h1>
+  <p>Select an option from the menu.</p>
+
+  <!-- Navigation Buttons -->
+  <div class="row justify-content-center mt-5">
+      <!-- Row 1 -->
+      <div class="col-md-10 d-flex justify-content-center flex-wrap gap-3 mb-5">
+          <a href="{% url 'add_doctor' %}" class="btn px-4 py-3 fs-5 text-white shadow-lg" style="background-color: #002b2b;">
+              <i class="bi bi-person-plus me-2"></i>Add Doctor
+          </a>
+          <a href="{% url 'display_doctors' %}" class="btn px-4 py-3 fs-5 text-white shadow-lg" style="background-color: #002b2b;">
+              <i class="bi bi-person-lines-fill me-2"></i>Doctors
+          </a>
+          <a href="{% url 'book_appointment' %}" class="btn px-4 py-3 fs-5 text-white shadow-lg" style="background-color: #002b2b;">
+              <i class="bi bi-calendar-plus me-2"></i>Book Appointment
+          </a>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="col-md-10 d-flex justify-content-center flex-wrap gap-3">
+          <a href="{% url 'requested_appointments' %}" class="btn px-4 py-3 fs-5 text-white" style="background-color: #002b2b;">
+              <i class="bi bi-envelope-open me-2"></i>Requested
+          </a>
+          <a href="{% url 'appointment_list' %}" class="btn px-4 py-3 fs-5 text-white" style="background-color: #002b2b;">
+              <i class="bi bi-calendar-check me-2"></i>Appointments
+          </a>
+          <a href="{% url 'register_admin' %}" class="btn px-4 py-3 fs-5 text-white" style="background-color: #002b2b;">
+              <i class="bi bi-clock-history me-2"></i>Register Admin
+          </a>
+      </div>
+    </div>
+</div>
+
+{% endblock %}

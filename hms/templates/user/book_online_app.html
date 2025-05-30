@@ -1,0 +1,121 @@
+{% extends "user/user_base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<style>
+  input, select, textarea {
+    border-radius: 8px !important;
+  }
+
+  .form-control, .form-select {
+    padding: 10px 14px;
+    font-size: 16px;
+  }
+
+  .btn {
+    padding: 10px 16px;
+    font-size: 16px;
+  }
+
+</style>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <h2 class="text-center mb-4 fw-bold">Book an Appointment</h2>
+
+    <div class="col-6">
+      {% if form.non_field_errors %}
+        <div class="alert alert-danger">
+          {{ form.non_field_errors }}
+        </div>
+      {% endif %}
+  
+      <form method="post">
+          {% csrf_token %}
+  
+          <div class="mb-3 fw-bold">
+              {{ form.full_name.label_tag }} {{ form.full_name }}
+          </div>
+  
+          <div class="mb-3 fw-bold">
+              {{ form.email.label_tag }} {{ form.email }}
+          </div>
+  
+          <div class="mb-3 fw-bold">
+              {{ form.phone.label_tag }} {{ form.phone }}
+          </div>
+  
+          <div class="mb-3 fw-bold">
+              {{ form.department.label_tag }} {{ form.department }}
+          </div>
+  
+          <div class="mb-3 fw-bold">
+              <label for="id_doctor">Doctor</label>
+              <select id="id_doctor" name="doctor" class="form-select">
+                  <option value="">---------</option>
+              </select>
+          </div>
+  
+          <div class="mb-3 fw-bold">
+              {{ form.date.label_tag }}
+              <div class="input-group">
+                  {{ form.date }}
+              </div>
+          </div>
+  
+          <div class="mb-3 fw-bold">
+              {{ form.time.label_tag }}
+              <div class="input-group">
+                  {{ form.time }}
+              </div>
+          </div>
+  
+          <div class="mb-3 fw-bold">
+              {{ form.description.label_tag }} {{ form.description }}
+          </div>
+  
+          <div class="d-grid">
+            <input type="submit" value="Book Appointment" class="btn text-white fw-bold" style="background-color: #175f65;">
+            <a href="{% url 'user_dashboard' %}" class="btn text-white form-control fw-bold" style="background-color: #175f65;">Go back</a>
+          </div>
+  
+      </form>
+  </div>
+  </div> 
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    // Department → Load doctors
+    document.getElementById('id_department')?.addEventListener('change', function () {
+        const departmentId = this.value;
+        fetch(`/ajax/load-doctors/?department=${departmentId}`)
+            .then(response => response.json())
+            .then(data => {
+                const doctorSelect = document.getElementById('id_doctor');
+                doctorSelect.innerHTML = '<option value="">---------</option>';
+                data.forEach(doctor => {
+                    const option = document.createElement('option');
+                    option.value = doctor.id;
+                    option.textContent = doctor.full_name;
+                    doctorSelect.appendChild(option);
+                });
+            });
+    });
+
+    flatpickr("#id_date", {
+        dateFormat: "Y-m-d",
+        altInput: true,
+        altFormat: "F j, Y"
+    });
+
+    flatpickr("#id_time", {
+        enableTime: true,
+        noCalendar: true,
+        dateFormat: "H:i",
+        time_24hr: true
+    });
+});
+</script>
+
+{% endblock %}

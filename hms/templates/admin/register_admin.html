@@ -1,0 +1,18 @@
+{% extends 'admin/admin_base.html' %}
+{% load crispy_forms_tags %}
+{% load static %} 
+
+{% block content %}
+  <div class="container mt-4">
+    <h2>Register New Admin</h2>
+    <form method="POST">
+      {% csrf_token %}
+      {{ form|crispy }}
+      <div class="button-center">
+        <input type="submit" value="Save" class="btn btn-lg text-white" style="background-color: #175f65;">
+        <a href="{% url 'admin_dashboard' %}" class="btn btn-lg text-white " style="background-color: #175f65;">Go back</a>
+        
+    </div>
+    </form>
+  </div>
+{% endblock %}

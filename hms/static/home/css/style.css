@@ -1,0 +1,91 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+}
+/* .hero {
+    background: url(../images//background1.jpg) no-repeat center center;
+    background-size: cover;
+    padding: 150px 0;
+    color: #030e38;
+} */
+.hero {
+    background: url(../images//background1.jpg) no-repeat center center;
+    background-size: cover;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    color: #013b40;
+    padding: 120px 0;
+}
+
+.hero h1 {
+    font-weight: 800;
+    color: #013539;
+
+}
+.info-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
+.services-icon {
+    font-size: 40px;
+    color: #dc3545;
+}
+footer {
+    background: #f8f9fa;
+    padding: 40px 0;
+}
+
+/* About Page */
+
+.hero-about {
+    background-color: #006d77;
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+}
+.section-title {
+    color: #006d77;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+.about-card {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* Contact page */
+
+.contact-header {
+    background: url(../images//background1.jpg) no-repeat center center;
+    background-size: cover;
+    color: #013b40;
+    padding: 100px 0;
+    text-align: center;
+}
+.contact-card {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+.section-title {
+    color: #013b40;
+    font-weight: bold;
+}
+
+/* .section-title {
+    color: #006d77;
+    margin-bottom: 30px;
+    font-weight: bold;
+} */
+
+.about-card {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}

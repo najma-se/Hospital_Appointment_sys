@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %} 
+{% block content %} 
+<style>
+    body {
+        background-color: #ffffff;
+    }
+    .login-container {
+        max-width: 400px;
+        margin: 5% auto;
+        padding: 30px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 128, 128, 0.2);
+    }
+    .teal-header {
+        color: teal;
+    }
+    .btn-teal {
+        background-color: teal;
+        color: white;
+    }
+    .btn-teal:hover {
+        background-color: #007d7d;
+        color: white;
+    }
+    .form-check-label {
+        font-size: 0.9rem;
+        color: #555;
+    }
+</style>
+        
+    <div class="container">
+        <div class="login-container">
+            <h3 class="text-center black-header">Welcome Back</h3>
+            <p class="text-center">Log in to continue</p>
+
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-danger text-center">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+
+            <form method="POST" novalidate>
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="id_email" class="form-label">Email address</label>
+                    {{ form.email }}
+                </div>
+                <div class="mb-3">
+                    <label for="id_password" class="form-label">Password</label>
+                    {{ form.password }}
+
+                    <div class="form-check mt-2">
+                        <input type="checkbox" class="form-check-input" id="showPassword">
+                        <label class="form-check-label" for="showPassword">Show password</label>
+                    </div>
+                </div>
+                                
+                
+
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-teal" style="background-color: #175f65;">Login</button>
+                </div>
+            </form>
+
+            <div class="text-center mt-3">
+                <small>Don't have an account? <a href="{% url 'signup' %}">Sign up</a></small>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const passwordInput = document.getElementById("id_password");
+          const toggle = document.getElementById("showPassword");
+      
+          toggle.addEventListener("change", function () {
+            passwordInput.type = this.checked ? "text" : "password";
+          });
+        });
+      </script>
+{% endblock %}

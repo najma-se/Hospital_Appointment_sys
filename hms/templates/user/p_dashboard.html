@@ -1,0 +1,20 @@
+{% extends "user/user_base.html" %}
+{% block content %}
+<!-- Welcome Message -->
+    <div class="container text-center mt-4 fw-bold">
+        <h1>Welcome, {{ request.user.full_name }}</h1>
+        <p>Select an action below to manage your appointments.</p>
+    
+        <!-- Navigation Buttons -->
+        <div class="row justify-content-center mt-4">
+        <div class="col-md-10 d-flex justify-content-center flex-wrap gap-3 mb-4">
+            <a href="{% url 'book_online_app' %}" class="btn px-4 py-3 fs-5 text-white shadow-lg" style="background-color: #198754;">
+            <i class="bi bi-calendar-plus me-2"></i>Book Appointment
+            </a>
+            <a href="{% url 'my_appointments' %}" class="btn px-4 py-3 fs-5 text-white shadow-lg" style="background-color: #0d6efd;">
+            <i class="bi bi-clipboard-check me-2"></i>View My Appointments
+            </a>
+        </div>
+        </div>
+    </div>
+{% endblock %}

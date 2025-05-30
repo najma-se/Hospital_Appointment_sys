@@ -1,0 +1,25 @@
+.top-bar {
+    background-color: #006d77;
+    color: white;
+}
+.nav-link {
+    color: white;
+}
+.nav-link:hover {
+    color: #ffc107;
+}
+footer {
+    text-align: center;
+    color: #6c757d;
+    padding: 10px;
+    font-size: 0.9rem;
+    /* background-color: #f8f9fa; */
+}
+.button-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
