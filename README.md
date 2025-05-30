@@ -56,8 +56,8 @@ Installation and Setup
 
 2. Create a virtual environment:
 
-```python -m venv venv```
-```source venv/bin/activate  # On Windows: venv\Scripts\activate```
+```virtualenv env```  
+```env\Scripts\activate```
 
 3. Install dependencies:
 
