@@ -24,7 +24,7 @@ Admin Dashboard
 
 Technologies Used:
 - Backend: Django (Python)
-- Frontend: HTML, CSS, Bootstrap, JavaScript
+- Frontend: HTML, CSS, Bootstrap
 - Database: SQLite (default)
 - Version Control: Git & GitHub
 
