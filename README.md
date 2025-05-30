@@ -24,7 +24,7 @@ Admin Dashboard
 
 Technologies Used:
 - Backend: Django (Python)
-- Frontend: HTML, CSS, Bootstrap, JavaScript
+- Frontend: HTML, CSS, Bootstrap
 - Database: SQLite (default)
 - Version Control: Git & GitHub
 
@@ -56,8 +56,8 @@ Installation and Setup
 
 2. Create a virtual environment:
 
-```python -m venv venv```
-```source venv/bin/activate  # On Windows: venv\Scripts\activate```
+```virtualenv env```  
+```env\Scripts\activate```
 
 3. Install dependencies:
 
