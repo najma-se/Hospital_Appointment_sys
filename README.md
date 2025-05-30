@@ -2,35 +2,34 @@ Hospital Appointment Management System
 
 A web-based application designed to streamline the process of booking and managing hospital appointments. Built with Django, the system facilitates patient registrations, appointment requests, approvals by admin staff, and appointment management.
 
+
 Features
+User Authentication
+- Patients and Admins can register and log in.
+- Role-based redirection to appropriate dashboards.
 
-✅ User Authentication
-	•	Patients and Admins can register and log in.
-	•	Role-based redirection to appropriate dashboards.
+Appointment Requests
+- Patients can request appointments by selecting doctor, date, time, and adding a description.
+- Admins can approve or reject requests.
 
-✅ Appointment Requests
-	•	Patients can request appointments by selecting doctor, date, time, and adding a description.
-	•	Admins can approve or reject requests.
+Appointment Management
+- Admins can view and manage confirmed appointments.
+- Cancel or update appointments if necessary.
 
-✅ Appointment Management
-	•	Admins can view and manage confirmed appointments.
-	•	Cancel or update appointments if necessary.
-
-✅ Admin Dashboard
-	•	View all appointment requests and appointments.
-	•	Manage doctors and departments.
+Admin Dashboard
+- View all appointment requests and appointments.
+- Manage doctors and departments.
 
 
 
 Technologies Used:
-	•	Backend: Django (Python)
-	•	Frontend: HTML, CSS, Bootstrap, JavaScript
-	•	Database: SQLite (default)
-	•	Version Control: Git & GitHub
+- Backend: Django (Python)
+- Frontend: HTML, CSS, Bootstrap, JavaScript
+- Database: SQLite (default)
+- Version Control: Git & GitHub
 
- 📂 Project Structure
 
-🗂 Project Structure
+Project Structure
 
 Hospital_Appointment_sys/
 ├── appointmentsystem/
@@ -79,9 +78,9 @@ Installation and Setup
 
 
 Usage
-	•	Patients can register and log in to book appointments.
-	•	Admins can log in, view appointment requests, approve/reject requests, and manage appointments.
-	•	Both admins and patients have role-specific dashboards.
+- Patients can register and log in to book appointments.
+- Admins can log in, view appointment requests, approve/reject requests, and manage appointments.
+- Both admins and patients have role-specific dashboards.
 
 
 
