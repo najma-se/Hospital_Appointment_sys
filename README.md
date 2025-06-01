@@ -82,7 +82,7 @@ Usage
 - Admins can log in, view appointment requests, approve/reject requests, and manage appointments.
 - Both admins and patients have role-specific dashboards.
 
-
+(For final Django project)
 
 
 
