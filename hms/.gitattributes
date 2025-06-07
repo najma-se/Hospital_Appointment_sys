@@ -3,4 +3,4 @@
 *.css linguist-detectable=false
 
 # Explicitly count Python files as Python
-*.py linguist-language=Python
+# *.py linguist-language=Python
