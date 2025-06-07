@@ -1,0 +1,6 @@
+# Ignore HTML and CSS files in language detection
+*.html linguist-detectable=false
+*.css linguist-detectable=false
+
+# Explicitly count Python files as Python
+*.py linguist-language=Python
