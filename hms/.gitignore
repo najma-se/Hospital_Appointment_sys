@@ -1,0 +1,53 @@
+# === Python Compiled Files ===
+__pycache__/
+*.py[cod]
+*$py.class
+
+# === Virtual Environment ===
+# If you created your virtualenv in the project folder, ignore it
+venv/
+env/
+ENV/
+.VENV/
+.VENV*/
+*.env
+
+# === Django Specific ===
+*.sqlite3
+db.sqlite3
+media/
+staticfiles/           # If using 'collectstatic'
+*.log
+*.pot
+*.pyc
+local_settings.py
+
+# === Environment & Config ===
+.env
+.env.*
+
+# === IDE / Editor Config ===
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# === OS Specific ===
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# === Test / Coverage ===
+htmlcov/
+.tox/
+.coverage
+coverage.xml
+pytest_cache/
+.noseids
+.pytest_cache/
+
+# === Build Artifacts ===
+build/
+dist/
+*.egg-info/
+.eggs/
