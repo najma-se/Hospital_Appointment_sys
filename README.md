@@ -30,7 +30,7 @@ A web-based application designed to streamline the process of booking and managi
 
 
 ## Project Structure
-
+```
 Hospital_Appointment_sys/
 ├── appointmentsystem/
 │   ├── models.py
@@ -45,7 +45,7 @@ Hospital_Appointment_sys/
 ├── db.sqlite3
 ├── manage.py
 └── requirements.txt
-
+```
 
 ## Installation and Setup
 
